@@ -1,69 +1,91 @@
-  <!-- Subscription Form Section -->
-  <div class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Stay Updated with TravelPack
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Subscribe to our newsletter for exclusive travel deals, destination guides, and insider tips.
-        </p>
-      </div>
+<section class="py-16 mt-16 bg-blue-600">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+        Stay Updated with TravelPack
+      </h2>
+      <p class="mt-3 text-lg text-white max-w-2xl mx-auto">
+        Subscribe for exclusive travel deals, destination guides, and insider tips.
+      </p>
+    </div>
 
-      <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
-        <form (ngSubmit)="onSubscribe()" #subscriptionForm="ngForm" class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                [(ngModel)]="subscriptionData.email"
-                required
-                email
-                class="w-80 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                placeholder="Enter your email address"
-              >
-            </div>
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                [(ngModel)]="subscriptionData.phone"
-                class="w-80 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                placeholder="Enter your phone number"
-              >
-            </div>
-          </div>
-          
-          <div class="text-center">
-            <button
-              type="submit"
-              [disabled]="!subscriptionForm.valid || isSubmitting"
-              class="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl disabled:cursor-not-allowed"
+    <div class="bg-white/70 backdrop-blur-sm border border-gray-100 rounded-3xl p-6 md:p-8 shadow-2xl">
+      <form (ngSubmit)="onSubscribe()" #subscriptionForm="ngForm" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="relative">
+            <svg class="w-5 h-5 absolute left-3 top-3 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
+            </svg>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2 sr-only">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              [(ngModel)]="subscriptionData.email"
+              required
+              class="w-80 rounded-xl border border-gray-200 bg-white px-4 py-3 pl-12 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+              placeholder="Email address *"
+              aria-required="true"
             >
-              <span *ngIf="!isSubmitting">Subscribe Now</span>
-              <span *ngIf="isSubmitting">Subscribing...</span>
-            </button>
           </div>
 
-          <!-- Success/Error Messages -->
-          <div *ngIf="message" class="text-center">
-            <div *ngIf="isSuccess" class="text-green-600 bg-green-50 border border-green-200 rounded-lg p-4">
-              {{ message }}
-            </div>
-            <div *ngIf="!isSuccess" class="text-red-600 bg-red-50 border border-red-200 rounded-lg p-4">
+          <div class="relative">
+            <svg class="w-5 h-5 absolute left-3 top-3 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 8.5A6.5 6.5 0 0 1 8.5 2h7A6.5 6.5 0 0 1 22 8.5v7A6.5 6.5 0 0 1 15.5 22h-7A6.5 6.5 0 0 1 2 15.5v-7z"/>
+            </svg>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 sr-only">Phone Number</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              [(ngModel)]="subscriptionData.phone"
+              class="w-80 rounded-xl border border-gray-200 bg-white px-4 py-3 pl-12 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+              placeholder="Phone (optional)"
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <button
+            type="submit"
+            [disabled]="!subscriptionForm.valid || isSubmitting"
+            class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-8 py-3 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-700 hover:to-blue-600 shadow-lg transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed transition"
+          >
+            <svg *ngIf="isSubmitting" class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" stroke-width="2" class="opacity-25"></circle>
+              <path d="M22 12a10 10 0 0 1-10 10" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+            <svg *ngIf="!isSubmitting" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            <span *ngIf="!isSubmitting">Subscribe Now</span>
+            <span *ngIf="isSubmitting">Subscribing…</span>
+          </button>
+        </div>
+
+        <div *ngIf="message" class="mt-2">
+          <div *ngIf="isSuccess" class="mx-auto max-w-2xl flex items-start gap-3 p-4 rounded-lg bg-green-50 border border-green-100 text-green-800">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
+            </svg>
+            <div class="text-sm leading-snug">
               {{ message }}
             </div>
           </div>
-        </form>
-      </div>
+          <div *ngIf="!isSuccess" class="mx-auto max-w-2xl flex items-start gap-3 p-4 rounded-lg bg-red-50 border border-red-100 text-red-800">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+            </svg>
+            <div class="text-sm leading-snug">
+              {{ message }}
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-500 text-center mt-1">
+          We respect your privacy. Unsubscribe anytime.
+        </p>
+      </form>
     </div>
   </div>
+</section>
