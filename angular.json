@@ -23,6 +23,7 @@
             "polyfills": [
               "zone.js"
             ],
+            "baseHref": "/travel-package/",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -30,7 +31,7 @@
             ],
             "styles": [
               "src/styles.css"
-               ],
+            ],
             "scripts": []
           },
           "configurations": {
