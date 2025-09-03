@@ -24,7 +24,7 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build -- --configuration production --base-href /travel-package/
-      - run: cp -r dist/*/browser dist/out || cp -r dist/* dist/out
+      - run: cp -r dist/fullstack-frontend dist/out
       - run: cp dist/out/index.html dist/out/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
