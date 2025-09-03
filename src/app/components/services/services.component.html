@@ -1,0 +1,33 @@
+<div class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Heading -->
+        <div class="mb-12 text-center max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <p class="text-gray-600">
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
+                the Semantics, a large language ocean.
+            </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            <!-- Left Image -->
+            <div class="order-1 h-80 md:h-auto">
+                <div class="w-full h-full rounded-xl overflow-hidden">
+                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('assets/images/a.jpg');">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="order-2 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div *ngFor="let f of features" class="flex items-start flex-col feature">
+                    <i class="{{ f.icon }} text-5xl text-dark-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">{{ f.title }}</h3>
+                    <p class="text-gray-600">{{ f.desc }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

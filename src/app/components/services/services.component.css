@@ -1,0 +1,7 @@
+.feature {
+    padding: 30px;
+    background: rgba(26, 55, 77, 0.05);
+    border-radius: 20px;
+    /* min-height: calc(50% - 15px); */
+    top: 0;
+ }

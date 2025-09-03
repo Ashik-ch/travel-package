@@ -1,0 +1,115 @@
+<div class="relative w-full h-[600px]"> <!-- section with fixed height -->
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-90">
+        <source src="assets/a.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+            Welcome to Our Travel Experiences
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-10">
+            Explore breathtaking destinations with curated inbound & outbound packages.
+        </p>
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a routerLink="/inbound"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
+                Explore Inbound Packages
+            </a>
+            <a routerLink="/outbound"
+                class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
+                Discover Outbound Tours
+            </a>
+        </div>
+    </div>
+
+
+    <app-subscription></app-subscription>
+
+
+    <!-- Features Section -->
+    <div class="py-20 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
+                    Why Choose TravelPack?
+                </h2>
+                <p class="text-xl text-gray-100 max-w-2xl mx-auto">
+                    We provide exceptional travel experiences with personalized service and unbeatable prices.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+                <!-- Feature 1 -->
+                <div class="text-center p-6 rounded-lg border-[4px]  shadow-xl rounded-lg ">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-300 mb-2">Curated Destinations</h3>
+                    <p class="text-blue-100">Handpicked locations and experiences for unforgettable memories.</p>
+                  </div>                  
+
+                <!-- Feature 2 -->
+                <div class="text-center p-6 shadow-xl rounded-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-300 mb-2">Best Prices</h3>
+                    <p class="text-blue-100">Competitive rates and exclusive deals for every budget.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center p-6  shadow-xl rounded-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-300 mb-2">Safe Travel</h3>
+                    <p class="text-blue-100">Your safety and comfort are our top priorities.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="text-center p-6  shadow-xl rounded-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-300 mb-2">24/7 Support</h3>
+                    <p class="text-blue-100">Round-the-clock assistance for worry-free travel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <!-- <div class="py-20 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Start Your Journey?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Book your dream vacation today and create memories that will last a lifetime.
+            </p>
+            <a routerLink="/booking"
+                class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl inline-block">
+                Book Your Trip Now
+            </a>
+        </div>
+    </div> -->
+    <app-services></app-services>
+
+    <app-contact></app-contact>
+</div>
