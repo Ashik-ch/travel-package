@@ -37,10 +37,10 @@ export class MapComponent implements OnInit, OnDestroy {
   highlightedStates: Record<string, StateInfo> = {
     "IN-KL": { color: 0xff6f61, details: "Kerala: Backwaters & Beaches", img: "assets/images/a.jpg" },
     "IN-KA": { color: 0x6a5acd, details: "Karnataka: Heritage & IT hub", img: "assets/images/b.jpg" },
-    "IN-RJ": { color: 0xffa500, details: "Rajasthan: Desert & Palaces", img: "assets/images/b.jpg" },
-    "IN-DL": { color: 0x008000, details: "Delhi: Capital City", img: "assets/images/a.jpg" },
-    "IN-MH": { color: 0x1e90ff, details: "Maharashtra: Mumbai & Bollywood", img: "assets/images/a.jpg" },
-    "IN-GA": { color: 0xdc143c, details: "Goa: Beaches & Nightlife", img: "assets/images/a.jpg" },
+    "IN-RJ": { color: 0xffa500, details: "Rajasthan: Desert & Palaces", img: "assets/images/c.jpg" },
+    "IN-DL": { color: 0x008000, details: "Delhi: Capital City", img: "assets/images/d.jpg" },
+    "IN-MH": { color: 0x1e90ff, details: "Maharashtra: Mumbai & Bollywood", img: "assets/images/e.jpg" },
+    "IN-GA": { color: 0xdc143c, details: "Goa: Beaches & Nightlife", img: "assets/images/f.jpg" },
     "IN-TN": { color: 0x800080, details: "Tamil Nadu: Temples & Culture", img: "assets/images/a.jpg" }
   };
 

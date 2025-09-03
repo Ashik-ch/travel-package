@@ -35,11 +35,11 @@ export class OutbondMapComponent implements OnInit, OnDestroy {
     // Highlighted destinations
     const destinations: any = {
       AE: { name: "UAE", color: "#FF6B6B", img: "assets/images/a.jpg" },
-      SA: { name: "Saudi Arabia", color: "#FFA94D", img: "assets/images/a.jpg" },
-      QA: { name: "Qatar", color: "#74C0FC", img: "assets/qatar.jpg" },
-      OM: { name: "Oman", color: "#63E6BE", img: "assets/oman.jpg" },
-      MV: { name: "Maldives", color: "#FFD43B", img: "assets/maldives.jpg" },
-      TH: { name: "Thailand", color: "#845EF7", img: "assets/thailand.jpg" },
+      SA: { name: "Saudi Arabia", color: "#FFA94D", img: "assets/images/b.jpg" },
+      QA: { name: "Qatar", color: "#74C0FC", img: "assets/c.jpg" },
+      OM: { name: "Oman", color: "#63E6BE", img: "assets/d.jpg" },
+      MV: { name: "Maldives", color: "#FFD43B", img: "assets/e.jpg" },
+      TH: { name: "Thailand", color: "#845EF7", img: "assets/f.jpg" },
       SG: { name: "Singapore", color: "#FF922B", img: "assets/singapore.jpg" },
       MY: { name: "Malaysia", color: "#40C057", img: "assets/malaysia.jpg" },
       ID: { name: "Indonesia (Bali)", color: "#FAB005", img: "assets/bali.jpg" },

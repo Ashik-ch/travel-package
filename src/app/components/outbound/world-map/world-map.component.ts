@@ -70,13 +70,13 @@ export class WorldMapComponent implements OnInit, OnDestroy {
     "SG": { 
       color: 0x1e90ff, 
       details: "Singapore: Garden city with futuristic architecture", 
-      image: "assets/images/a.jpg",
+      image: "assets/images/e.jpg",
       countryCode: "singapore"
     },
     "LK": { 
       color: 0xdc143c, 
       details: "Sri Lanka: Pearl of the Indian Ocean", 
-      image: "assets/images/b.jpg",
+      image: "assets/images/f.jpg",
       countryCode: "sri-lanka"
     },
     "ZA": { 
