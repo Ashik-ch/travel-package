@@ -141,32 +141,32 @@ export class InboundCategoryComponent implements OnInit, AfterViewInit {
           {
             title: 'Backwaters',
             description: 'Peaceful houseboat cruises through serene waterways',
-            img: 'assets/images/a.jpg',
+            img: 'assets/images/h.jpg',
           },
           {
             title: 'Tea Gardens',
             description: 'Visit the famous tea estates of Munnar',
-            img: 'assets/images/b.jpg',
+            img: 'assets/images/i.jpg',
           },
           {
             title: 'Ayurveda',
             description: 'Traditional wellness treatments and therapies',
-            img: 'assets/images/c.jpg',
+            img: 'assets/images/h.jpg',
           },
           {
             title: 'Hill Areas',
             description: 'Explore the misty mountains and trekking trails',
-            img: 'assets/images/d.jpg',
+            img: 'assets/images/i.jpg',
           },
           {
             title: 'Beaches',
             description: 'Relax on pristine golden beaches like Kovalam & Varkala',
-            img: 'assets/images/e.jpg',
+            img: 'assets/images/j.jpg',
           },
           {
             title: 'Historical Sites',
             description: 'Discover forts, palaces, and ancient temples',
-            img: 'assets/images/f.jpg',
+            img: 'assets/images/i.jpg',
           },
         ],
         packages: [

@@ -22,25 +22,32 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <div *ngFor="let country of countries" class="group cursor-pointer"
                     (click)="navigateToCountry(country.code)">
-                    <div *ngIf="country.image; else gradientCard" class="relative rounded-xl overflow-hidden group">
+                    <div *ngIf="country.image; else gradientCard"
+                        class="relative rounded-xl overflow-hidden group h-full">
                         <div class="absolute inset-0 bg-cover bg-center filter brightness-50 transition-all duration-300 group-hover:brightness-90"
                             [style.background-image]="'url(' + country.image + ')'"></div>
-                        <div class="relative p-6 text-white transition-all duration-300 group-hover:shadow-lg">
-                            <div class="flex items-center justify-between mb-4">
+                        <div
+                            class="relative flex flex-col justify-between h-80 pt-6 px-6 text-white transition-all duration-300 group-hover:shadow-lg">
+                            <div class="flex items-center justify-between">
                                 <h3 class="text-xl font-bold">{{ country.title }}</h3>
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7" />
                                 </svg>
                             </div>
-                            <p class="mb-2">{{ country.subtitle }}</p>
-                            <p class="text-sm">{{ country.desc }}</p>
+
+                            <!-- Subtitle & Description at bottom -->
+                            <div>
+                                <p class="text-lg font-medium">{{ country.subtitle }}</p>
+                                <p class="text-sm text-gray-200">{{ country.desc }}</p>
+                            </div>
                         </div>
                     </div>
 
                     <ng-template #gradientCard>
-                        <div class="bg-gradient-to-br rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200"
-                            >
+                        <div
+                            class="bg-gradient-to-br rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="text-xl font-bold">{{ country.title }}</h3>
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
