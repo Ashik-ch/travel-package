@@ -20,99 +20,18 @@
             </h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Kerala -->
-                <div class="group cursor-pointer" (click)="navigateToState('kerala')">
-                    <div
-                        class="bg-gradient-to-br from-green-400 to-green-600 rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
+                <div *ngFor="let state of states" class="group cursor-pointer" (click)="navigateToState(state.id)">
+                    <div class="bg-gradient-to-br rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200"
+                        [ngClass]="state.gradient">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold">Kerala</h3>
+                            <h3 class="text-xl font-bold">{{ state.name }}</h3>
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 5l7 7-7 7" />
                             </svg>
                         </div>
-                        <p class="text-green-100 mb-2">God's Own Country</p>
-                        <p class="text-sm text-green-200">Backwaters, Tea Gardens, Ayurveda</p>
-                    </div>
-                </div>
-
-                <!-- Karnataka -->
-                <div class="group cursor-pointer" (click)="navigateToState('karnataka')">
-                    <div
-                        class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold">Karnataka</h3>
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                        <p class="text-blue-100 mb-2">One State Many Worlds</p>
-                        <p class="text-sm text-blue-200">Ancient Temples, Coffee Estates, Beaches</p>
-                    </div>
-                </div>
-
-                <!-- Tamil Nadu -->
-                <div class="group cursor-pointer" (click)="navigateToState('tamil-nadu')">
-                    <div
-                        class="bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold">Tamil Nadu</h3>
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                        <p class="text-orange-100 mb-2">Land of Temples</p>
-                        <p class="text-sm text-orange-200">Dravidian Architecture, Hill Stations</p>
-                    </div>
-                </div>
-
-                <!-- Goa -->
-                <div class="group cursor-pointer" (click)="navigateToState('goa')">
-                    <div
-                        class="bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold">Goa</h3>
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                        <p class="text-yellow-100 mb-2">Pearl of the Orient</p>
-                        <p class="text-sm text-yellow-200">Beaches, Nightlife, Portuguese Heritage</p>
-                    </div>
-                </div>
-
-                <!-- North India -->
-                <div class="group cursor-pointer" (click)="navigateToState('north-india')">
-                    <div
-                        class="bg-gradient-to-br from-red-400 to-red-600 rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold">North India</h3>
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                        <p class="text-red-100 mb-2">Himalayan Paradise</p>
-                        <p class="text-sm text-red-200">Mountains, Temples, Heritage Sites</p>
-                    </div>
-                </div>
-
-                <!-- Rajasthan -->
-                <div class="group cursor-pointer" (click)="navigateToState('rajasthan')">
-                    <div
-                        class="bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold">Rajasthan</h3>
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                        <p class="text-purple-100 mb-2">Land of Kings</p>
-                        <p class="text-sm text-purple-200">Palaces, Forts, Desert Safaris</p>
+                        <p class="mb-2">{{ state.tagline }}</p>
+                        <p class="text-sm opacity-90">{{ state.description }}</p>
                     </div>
                 </div>
             </div>
@@ -124,23 +43,16 @@
                 Popular Inbound Packages
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Golden Triangle</h3>
-                    <p class="text-blue-100 mb-4">Delhi - Agra - Jaipur</p>
-                    <p class="text-sm text-blue-200">Experience the rich history and culture of North India</p>
-                </div>
-                <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Kerala Backwaters</h3>
-                    <p class="text-green-100 mb-4">Munnar - Thekkady - Alleppey</p>
-                    <p class="text-sm text-green-200">Serene backwaters and lush greenery</p>
-                </div>
-                <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Rajasthan Heritage</h3>
-                    <p class="text-purple-100 mb-4">Udaipur - Jodhpur - Jaisalmer</p>
-                    <p class="text-sm text-purple-200">Royal palaces and desert adventures</p>
+                <div *ngFor="let pack of packages"
+                    class="bg-gradient-to-br rounded-xl p-6 text-white cursor-pointer hover:shadow-lg transition-all duration-200"
+                    [ngClass]="pack.gradient" (click)="openPackage(pack.id)">
+                    <h3 class="text-xl font-bold mb-2">{{ pack.name }}</h3>
+                    <p class="mb-4 opacity-90">{{ pack.route }}</p>
+                    <p class="text-sm opacity-75">{{ pack.description }}</p>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <app-contact></app-contact>
