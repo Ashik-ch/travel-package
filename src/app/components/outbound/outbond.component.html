@@ -20,7 +20,7 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <div *ngFor="let country of countries" class="group cursor-pointer"
+                <div #countryCard *ngFor="let country of countries" class="group cursor-pointer"
                     (click)="navigateToCountry(country.code)">
                     <div *ngIf="country.image; else gradientCard"
                         class="relative rounded-xl overflow-hidden group h-full">
@@ -36,8 +36,6 @@
                                         d="M9 5l7 7-7 7" />
                                 </svg>
                             </div>
-
-                            <!-- Subtitle & Description at bottom -->
                             <div>
                                 <p class="text-lg font-medium">{{ country.subtitle }}</p>
                                 <p class="text-sm text-gray-200">{{ country.desc }}</p>
