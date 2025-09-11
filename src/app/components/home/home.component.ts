@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ServicesComponent } from '../services/services.component';
 import { SubscriptionComponent } from '../pages/subscription/subscription.component';
 import { ContactComponent } from '../pages/contact/contact.component';
+import { Button } from '@amcharts/amcharts5';
 
 interface Feature {
   iconBg: string;
@@ -67,9 +68,12 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
     this.animateFeatureCards();
+    this.buttonAnimation()
+  }
 
+
+  private buttonAnimation() {
     const buttons = document.querySelectorAll<HTMLElement>('.fancy-btn');
-
     buttons.forEach(btn => {
       const bg = btn.querySelector<HTMLElement>('.bg');
       let tl = gsap.timeline({ paused: true });
@@ -96,7 +100,7 @@ export class HomeComponent implements AfterViewInit {
         });
 
         tl.play(0);
-        btn.style.color = "white"; 
+        btn.style.color = "white";
       });
 
       btn.addEventListener("mouseleave", () => {
@@ -104,7 +108,6 @@ export class HomeComponent implements AfterViewInit {
         btn.style.color = "rgb(37 99 235 / var(--tw-bg-opacity, 1))";
       });
     });
-
   }
 
   private animateFeatureCards() {
