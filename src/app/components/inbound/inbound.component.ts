@@ -1,10 +1,9 @@
 import { Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { MapComponent } from '../map/map.component';
+import { FormsModule } from '@angular/forms'; 
 import { ContactComponent } from '../pages/contact/contact.component';
-import { IndiaMapComponent } from '../india-map/india-map.component';
+import { IndiaMapComponent } from './india-map/india-map.component';
 
 @Component({
   selector: 'app-inbound',
@@ -12,8 +11,7 @@ import { IndiaMapComponent } from '../india-map/india-map.component';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule,
-    MapComponent,
+    FormsModule, 
     ContactComponent,
     IndiaMapComponent
   ],
