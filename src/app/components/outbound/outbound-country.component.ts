@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../pages/contact/contact.component';
+import { FeedbackComponent } from '../pages/feedback/feedback.component';
 
 @Component({
   selector: 'app-outbound-country',
@@ -11,7 +12,8 @@ import { ContactComponent } from '../pages/contact/contact.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ContactComponent
+    ContactComponent,
+    FeedbackComponent
   ],
   templateUrl: './outbondCountry.component.html',
   styles: []

@@ -10,7 +10,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-outbound',
   standalone: true,
-  imports: [CommonModule, RouterModule, OutbondMapComponent, WorldMapComponent, ContactComponent],
+  imports: [CommonModule, RouterModule,
+     OutbondMapComponent, WorldMapComponent, ContactComponent],
   templateUrl: './outbond.component.html',
 })
 export class OutboundComponent implements AfterViewInit {

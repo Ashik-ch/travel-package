@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../../pages/contact/contact.component';
+import { FeedbackComponent } from '../../pages/feedback/feedback.component';
 
 // Import Leaflet types
 declare var L: any;
@@ -13,7 +14,8 @@ declare var L: any;
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule, ContactComponent,
+    RouterModule,
+    ContactComponent, FeedbackComponent,
     FormsModule],
   templateUrl: './inbound-category.component.html',
   styleUrl: './inbound-category.component.css'
@@ -25,11 +27,7 @@ export class InboundCategoryComponent implements OnInit, AfterViewInit {
   availablePackages: any[] = [];
   popularDestinations: any[] = [];
   bestTimeToVisit: any[] = [];
-
   private map: any;
-  changeRequest = '';
-  isSubmitting = false;
-  changeRequestSubmitted = false;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -269,7 +267,7 @@ export class InboundCategoryComponent implements OnInit, AfterViewInit {
     this.popularDestinations = data.destinations;
     this.bestTimeToVisit = data.bestTime;
   }
- 
+
   showPackageDetails(pkg: any) {
     // This would typically open a modal or navigate to package details
     console.log('Package details:', pkg);
@@ -287,32 +285,11 @@ export class InboundCategoryComponent implements OnInit, AfterViewInit {
     });
   }
 
-  submitChangeRequest() {
-    if (!this.changeRequest.trim()) {
-      return;
-    }
-
-    this.isSubmitting = true;
-
-    // Simulate API call
-    setTimeout(() => {
-      this.isSubmitting = false;
-      this.changeRequestSubmitted = true;
-      this.changeRequest = '';
-
-      // Hide success message after 10 seconds
-      setTimeout(() => {
-        this.changeRequestSubmitted = false;
-      }, 10000);
-    }, 2000);
-  }
-
   scrollToPackages() {
     const packagesElement = document.getElementById('packages');
     if (packagesElement) {
       packagesElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
- 
 }
 
