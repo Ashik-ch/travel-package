@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ContactComponent } from '../pages/contact/contact.component';
-import { FeedbackComponent } from '../pages/feedback/feedback.component';
+import { ContactComponent } from '../../pages/contact/contact.component';
+import { FeedbackComponent } from '../../pages/feedback/feedback.component';
 
 @Component({
   selector: 'app-outbound-country',
@@ -15,7 +15,7 @@ import { FeedbackComponent } from '../pages/feedback/feedback.component';
     ContactComponent,
     FeedbackComponent
   ],
-  templateUrl: './outbondCountry.component.html',
+  templateUrl: './outbond-category.component.html',
   styles: []
 })
 export class OutboundCountryComponent implements OnInit {

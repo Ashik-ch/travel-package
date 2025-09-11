@@ -1,7 +1,6 @@
 import { Component, ElementRef, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
-import { OutbondMapComponent } from './outbond-map/outbond-map.component';
+import { RouterModule, Router } from '@angular/router'; 
 import { WorldMapComponent } from './world-map/world-map.component';
 import { ContactComponent } from '../pages/contact/contact.component';
 import gsap from 'gsap';
@@ -11,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   selector: 'app-outbound',
   standalone: true,
   imports: [CommonModule, RouterModule,
-     OutbondMapComponent, WorldMapComponent, ContactComponent],
+    WorldMapComponent, ContactComponent],
   templateUrl: './outbond.component.html',
 })
 export class OutboundComponent implements AfterViewInit {

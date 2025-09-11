@@ -3,7 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InboundComponent } from './components/inbound/inbound.component';
 import { InboundCategoryComponent } from './components/inbound/inbound-category/inbound-category.component';
 import { OutboundComponent } from './components/outbound/outbound.component';
-import { OutboundCountryComponent } from './components/outbound/outbound-country.component';
+import { OutboundCountryComponent } from './components/outbound/outbond-category/outbond-category.component';
 import { BookingComponent } from './components/booking/booking.component';
 
 export const routes: Routes = [

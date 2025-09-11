@@ -1,11 +1,10 @@
 import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core'; 
-import { OutbondMapComponent } from '../outbound/outbond-map/outbond-map.component';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [NgForOf,  OutbondMapComponent],
+  imports: [NgForOf, ],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
