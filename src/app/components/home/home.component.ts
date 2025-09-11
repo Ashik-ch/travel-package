@@ -24,7 +24,8 @@ interface Feature {
     ContactComponent
   ],
   templateUrl: './home.component.html',
-  styles: []
+  styleUrl: './home.component.scss'
+
 })
 export class HomeComponent implements AfterViewInit {
   features: Feature[] = [
@@ -66,6 +67,44 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
     this.animateFeatureCards();
+
+    const buttons = document.querySelectorAll<HTMLElement>('.fancy-btn');
+
+    buttons.forEach(btn => {
+      const bg = btn.querySelector<HTMLElement>('.bg');
+      let tl = gsap.timeline({ paused: true });
+
+      // Expand background
+      tl.to(bg, {
+        scale: 1,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+
+      // Reset on leave
+      btn.addEventListener("mouseenter", (e: MouseEvent) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        gsap.set(bg, {
+          top: y + "px",
+          left: x + "px",
+          xPercent: -50,
+          yPercent: -50,
+          scale: 0
+        });
+
+        tl.play(0);
+        btn.style.color = "white"; 
+      });
+
+      btn.addEventListener("mouseleave", () => {
+        tl.reverse();
+        btn.style.color = "rgb(37 99 235 / var(--tw-bg-opacity, 1))";
+      });
+    });
+
   }
 
   private animateFeatureCards() {

@@ -1,0 +1,24 @@
+.fancy-btn {
+    position: relative;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.fancy-btn .label {
+    position: relative;
+    z-index: 2;
+}
+
+.fancy-btn .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: black;
+    color: #fff;
+    border-radius: 25%;
+    transform: scale(0);
+    transform-origin: center center;
+    z-index: 1;
+}
