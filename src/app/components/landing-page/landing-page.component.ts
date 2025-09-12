@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverFxDirective } from 'src/app/directives/hover.directive';
+import { Router } from '@angular/router';
 
 interface DestinationSection {
   code: string;
@@ -25,12 +26,21 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     { code: 'uae', title: 'United Arab Emirates', imageUrl: 'assets/images/d.jpg' },
     { code: 'jp', title: 'Japan', imageUrl: 'assets/images/e.jpg' },
     { code: 'cn', title: 'China', imageUrl: 'assets/images/f.jpg' },
-    { code: 'in', title: 'India', imageUrl: 'assets/images/g.jpg' }
+    { code: 'in', title: 'India', imageUrl: 'assets/images/g.jpg' },
+    { code: 'sl', title: 'SreLanka', imageUrl: 'assets/images/h.jpg' }
   ];
+  sectionPairs: DestinationSection[][] = [];
 
   private ctx?: gsap.Context;
 
-  constructor(private zone: NgZone) {}
+  constructor(private zone: NgZone, private router: Router) { }
+
+
+
+  ngOnInit() {
+    this.sectionPairs = this.chunkArray(this.sections, 4);
+  }
+
 
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
@@ -75,20 +85,24 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
   }
 
 
-  // Group into pairs for md/xl layout
-get sectionPairs() {
-  const pairs: DestinationSection[][] = [];
-  for (let i = 0; i < this.sections.length; i += 2) {
-    pairs.push(this.sections.slice(i, i + 2));
+  private chunkArray(arr: DestinationSection[], size: number): DestinationSection[][] {
+    const res: DestinationSection[][] = [];
+    for (let i = 0; i < arr.length; i += size) {
+      res.push(arr.slice(i, i + size));
+    }
+    return res;
   }
-  return pairs;
-}
 
+  navigate(code: string) {
+    console.log("code",code);
+    
+    this.router.navigateByUrl("outbound/" + code)
+  }
 
   ngOnDestroy(): void {
     this.ctx?.revert();
     // Kill all triggers created within this component's context
-    try { ScrollTrigger.refresh(); } catch {}
+    try { ScrollTrigger.refresh(); } catch { }
   }
 }
 
