@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ServicesComponent } from '../services/services.component';
 import { SubscriptionComponent } from '../pages/subscription/subscription.component';
 import { ContactComponent } from '../pages/contact/contact.component';
-import { Button } from '@amcharts/amcharts5';
 
 interface Feature {
   iconBg: string;
