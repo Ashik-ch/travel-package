@@ -14,12 +14,14 @@
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a routerLink="/inbound"
-                class="fancy-btn hover-btn bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
+                class="fancy-btn hover-btn bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
+                appHoverFx [hoverScale]="1.02">
                 <span class="bg"></span>
                 <span class="label  text-white">Explore Inbound Packages</span>
             </a>
             <a routerLink="/outbound"
-                class="fancy-btn hover-btn text-blue-600 hover:text-white bg-white border-2 border-blue-600 px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
+                class="fancy-btn hover-btn text-blue-600 hover:text-white bg-white border-2 border-blue-600 px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
+                appHoverFx [hoverScale]="1.02">
                 <span class="bg"></span>
                 <span class="label ">Discover Outbound Tours</span>
             </a>
@@ -40,7 +42,8 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div *ngFor="let f of features"
-                    class="feature-card text-center p-6 shadow-xl rounded-lg border-[4px] cursor-pointer">
+                    class="feature-card text-center p-6 shadow-xl rounded-lg border-[4px] cursor-pointer" appHoverFx
+                    [hoverRotate]="1">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                         [ngClass]="f.iconBg">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" [ngClass]="f.iconColor"

@@ -1,9 +1,10 @@
 import { Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../pages/contact/contact.component';
 import { IndiaMapComponent } from './india-map/india-map.component';
+import { HoverFxDirective } from '../../directives/hover.directive';
 
 @Component({
   selector: 'app-inbound',
@@ -11,9 +12,10 @@ import { IndiaMapComponent } from './india-map/india-map.component';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule, 
+    FormsModule,
     ContactComponent,
-    IndiaMapComponent
+    IndiaMapComponent, 
+    HoverFxDirective
   ],
   templateUrl: './inbound.component.html',
   styleUrl: './inbound.component.css'
@@ -52,14 +54,14 @@ export class InboundComponent {
       name: 'Goa',
       gradient: 'from-yellow-400 to-yellow-600',
       tagline: 'Pearl of the Orient',
-      description: 'Beaches, Nightlife, Portuguese Heritage',  
+      description: 'Beaches, Nightlife, Portuguese Heritage',
     },
     {
       id: 'north-india',
       name: 'North India',
       gradient: 'from-red-400 to-red-600',
       tagline: 'Himalayan Paradise',
-      description: 'Mountains, Temples, Heritage Sites', 
+      description: 'Mountains, Temples, Heritage Sites',
     },
     {
       id: 'rajasthan',
@@ -67,7 +69,7 @@ export class InboundComponent {
       gradient: 'from-purple-400 to-purple-600',
       tagline: 'Land of Kings',
       description: 'Palaces, Forts, Desert Safaris',
-     }
+    }
   ];
 
   packages = [

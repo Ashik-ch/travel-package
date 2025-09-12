@@ -5,12 +5,15 @@ import { WorldMapComponent } from './world-map/world-map.component';
 import { ContactComponent } from '../pages/contact/contact.component';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HoverFxDirective } from 'src/app/directives/hover.directive';
 
 @Component({
   selector: 'app-outbound',
   standalone: true,
   imports: [CommonModule, RouterModule,
-    WorldMapComponent, ContactComponent],
+    WorldMapComponent, ContactComponent,
+    HoverFxDirective
+  ],
   templateUrl: './outbond.component.html',
 })
 export class OutboundComponent implements AfterViewInit {

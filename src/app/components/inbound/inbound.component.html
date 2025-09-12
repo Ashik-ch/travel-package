@@ -20,12 +20,13 @@
             </h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div *ngFor="let state of states" class="group cursor-pointer" (click)="navigateToState(state.id)">
+                <div *ngFor="let state of states" class="group cursor-pointer" (click)="navigateToState(state.id)"
+                    appHoverFx [hoverScale]="1.03" [hoverRotate]="1.5">
                     <!-- Card -->
                     <div class="rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200 relative overflow-hidden"
                         [ngClass]="state.gradient ? 'bg-gradient-to-br ' + state.gradient : ''"
                         [ngStyle]="state.bgImage ? { 'background-image': 'url(' + state.bgImage + ')', 'background-size': 'cover', 'background-position': 'center' } : {}">
-                         <div *ngIf="state.bgImage"
+                        <div *ngIf="state.bgImage"
                             class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all"></div>
                         <div class="relative z-10">
                             <div class="flex items-center justify-between mb-4">
@@ -52,7 +53,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div *ngFor="let pack of packages"
                     class="bg-gradient-to-br rounded-xl p-6 text-white cursor-pointer hover:shadow-lg transition-all duration-200"
-                    [ngClass]="pack.gradient" (click)="openPackage(pack.id)">
+                    appHoverFx [hoverRotate]="1.5" [ngClass]="pack.gradient" (click)="openPackage(pack.id)">
                     <h3 class="text-xl font-bold mb-2">{{ pack.name }}</h3>
                     <p class="mb-4 opacity-90">{{ pack.route }}</p>
                     <p class="text-sm opacity-75">{{ pack.description }}</p>

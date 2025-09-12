@@ -1,10 +1,11 @@
-import { NgForOf } from '@angular/common';
-import { Component } from '@angular/core'; 
+import { NgForOf } from '@angular/common'; 
+import { HoverFxDirective } from '../../directives/hover.directive';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [NgForOf, ],
+  imports: [NgForOf, HoverFxDirective],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })

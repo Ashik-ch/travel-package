@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HoverFxDirective } from '../../directives/hover.directive';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ServicesComponent } from '../services/services.component';
@@ -22,7 +23,8 @@ interface Feature {
   imports: [CommonModule,
     ServicesComponent,
     SubscriptionComponent,
-    ContactComponent
+    ContactComponent,
+    HoverFxDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
