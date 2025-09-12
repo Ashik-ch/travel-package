@@ -1,0 +1,44 @@
+<div id="explorerRoot"
+    class="relative min-h-[200vh] w-full overflow-x-hidden bg-gradient-to-b from-blue-50 via-white to-indigo-50">
+    <!-- Flight Path SVG overlay -->
+    <svg class="pointer-events-none fixed inset-0 w-full h-full z-0" viewBox="0 0 1440 2500" preserveAspectRatio="none">
+        <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+            <mask id="revealMask">
+                <path id="revealPath" d="" fill="none" stroke="#ffffff" stroke-width="6" />
+            </mask>
+        </defs>
+        <path id="flightPathFull" d="" fill="none" stroke="transparent" />
+        <path id="flightPathDotted" d="" fill="none" stroke="#0ea5e9" stroke-width="3" filter="url(#glow)" mask="url(#revealMask)" stroke-linecap="round" stroke-dasharray="8 12" />
+    </svg>
+
+    <!-- Plane Icon -->
+    <div id="planeIcon" class="fixed z-10" style="width: 24px; height: 24px;">
+        <svg viewBox="0 0 24 24" fill="#0ea5e9" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.18 9" fill="none" />
+            <path d="M21 16l-8-4-2-9-2 6-7 3 7 3 2 6 2-9 8-4z" />
+        </svg>
+    </div>
+
+    <!-- Cards layer -->
+    <div class="relative z-10 w-full h-[250vh]">
+        <div *ngFor="let c of cards" [id]="'card-' + c.id"
+            class="absolute transform transition will-change-transform duration-300 hover:scale-105"
+            [ngStyle]="{ top: c.topPercent + 'vh', left: c.leftPercent + 'vw' }">
+            <a [routerLink]="c.route"
+                class="block w-40 md:w-48 bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden border border-slate-100">
+                <div class="h-24 md:h-28 w-full bg-cover bg-center"
+                    [ngStyle]="{ 'background-image': 'url(' + c.img + ')' }"></div>
+                <div class="px-3 py-2">
+                    <h3 class="text-sm md:text-base font-semibold text-slate-800">{{ c.title }}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

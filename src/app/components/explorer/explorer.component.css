@@ -1,0 +1,7 @@
+#explorerRoot {
+    background-attachment: scroll;
+}
+
+#flightPathDotted {
+    stroke-linecap: round;
+}

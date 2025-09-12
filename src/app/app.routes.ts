@@ -5,6 +5,8 @@ import { InboundCategoryComponent } from './components/inbound/inbound-category/
 import { OutboundComponent } from './components/outbound/outbound.component';
 import { OutboundCountryComponent } from './components/outbound/outbond-category/outbond-category.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { ExplorerComponent } from './components/explorer/explorer.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,5 +16,7 @@ export const routes: Routes = [
   { path: 'outbound', component: OutboundComponent },
   { path: 'outbound/:country', component: OutboundCountryComponent },
   { path: 'booking', component: BookingComponent },
+  { path: 'landing', component: LandingPageComponent },
+  { path: 'explorer', component: ExplorerComponent },
   { path: '**', redirectTo: '/home' }
 ];
