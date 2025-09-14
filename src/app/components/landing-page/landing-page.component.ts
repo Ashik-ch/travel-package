@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverFxDirective } from 'src/app/directives/hover.directive';
 import { Router } from '@angular/router';
+import { AdvantagesComponent } from '../pages/advantages/advantages.component';
 
 interface DestinationSection {
   code: string;
@@ -14,7 +15,7 @@ interface DestinationSection {
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HoverFxDirective],
+  imports: [CommonModule, HoverFxDirective, AdvantagesComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })

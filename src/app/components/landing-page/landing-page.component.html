@@ -36,11 +36,15 @@
       </div>
     </div>
   </div>
+
+  <app-advantages></app-advantages>
+
   <!-- Sections -->
-  <div *ngFor="let pair of sectionPairs" class="relative w-full min-h-[80vh] md:min-h-[50vh]">
+  <div *ngFor="let pair of sectionPairs" class="relative w-full min-h-[80vh] md:min-h-[50vh] mt-12">
     <div class="grid grid-cols-1 md:grid-cols-4 h-full mx-6">
       <!-- Each destination in the pair -->
-      <div *ngFor="let s of pair" class="relative h-[50vh] overflow-hidden cursor-pointer hover:shadow-2xl" appHoverFx [hoverScale]=".98" (click)="navigate(s.code)">
+      <div *ngFor="let s of pair" class="relative h-[50vh] overflow-hidden cursor-pointer hover:shadow-2xl" appHoverFx
+        [hoverScale]=".98" (click)="navigate(s.code)">
         <!-- Background image -->
         <div class="cursor-pointer absolute inset-0 bg-cover bg-center"
           [ngStyle]="{ 'background-image': 'url(' + s.imageUrl + ')' }">
