@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ServicesComponent } from '../services/services.component';
 import { SubscriptionComponent } from '../pages/subscription/subscription.component';
 import { ContactComponent } from '../pages/contact/contact.component';
+import { AdvantagesComponent } from '../pages/advantages/advantages.component';
 
 interface Feature {
   iconBg: string;
@@ -24,6 +25,7 @@ interface Feature {
     SubscriptionComponent,
     ContactComponent,
     HoverFxDirective,
+    AdvantagesComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

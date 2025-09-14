@@ -5,10 +5,21 @@
 /* Custom styles */
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Muli', sans-serif, 'Playfair Display', serif,
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Playfair Display;
+}
+
+p {
+  font-family: Muli, sans-serif;
+
 }
 
 /* Custom utility classes */
@@ -38,14 +49,16 @@ body {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-a{
+a {
   text-decoration: none;
 }
+
 /* Button hover effects */
 
-button{
+button {
   border: none;
 }
+
 .btn-primary {
   @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200;
 }
@@ -95,6 +108,7 @@ button{
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -110,6 +124,7 @@ button{
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -125,6 +140,7 @@ button{
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

@@ -39,31 +39,21 @@ export class IndiaMapComponent implements AfterViewInit, OnDestroy {
       })
     );
 
-    // After polygonSeries is created
-    const destinationColors: Record<string, am5.Color> = {
-      mumbai: am5.color(0xff6b6b),
-      kolkata: am5.color(0x6bc5ff),
-      chennai: am5.color(0x6bff95),
-      bengaluru: am5.color(0xffd36b),
-      hyderabad: am5.color(0xd36bff),
-      delhi: am5.color(0x6bffea),
-    };
-
-    // Highlight destination states with custom colors
-    polygonSeries.mapPolygons.template.adapters.add("fill", (fill, target) => {
-      const dataContext = target.dataItem?.dataContext as StateDataContext | undefined;
-      const id = dataContext?.id;
+    // Highlight states
+    polygonSeries.mapPolygons.template.adapters.add('fill', (fill, target) => {
+      const id = (target.dataItem?.dataContext as any)?.id;
       if (!id) return fill;
-
-      if (id === "IN-MH") return am5.color(0xff6b6b);
-      if (id === "IN-WB") return am5.color(0x6bc5ff);
-      if (id === "IN-TN") return am5.color(0x6bff95);
-      if (id === "IN-KA") return am5.color(0xffd36b);
-      if (id === "IN-TG") return am5.color(0xd36bff);
-      if (id === "IN-DL") return am5.color(0x6bffea);
-      if (id === "IN-RJ") return am5.color(0xfff000);
-      if (id === "IN-KL") return am5.color(0xffff00);  
-      return fill;
+      const colors: Record<string, number> = {
+        'IN-MH': 0xff6b6b,
+        'IN-WB': 0x6bc5ff,
+        'IN-TN': 0x6bff95,
+        'IN-KA': 0xffd36b,
+        'IN-TG': 0xd36bff,
+        'IN-DL': 0x6bffea,
+        'IN-RJ': 0xfff000,
+        'IN-KL': 0xffff00,
+      };
+      return colors[id] ? am5.color(colors[id]) : fill;
     });
 
     // City markers
@@ -88,7 +78,7 @@ export class IndiaMapComponent implements AfterViewInit, OnDestroy {
       { id: 'bengaluru', title: 'Bengaluru', geometry: { type: 'Point', coordinates: [77.5946, 12.9716] } },
       { id: 'hyderabad', title: 'Hyderabad', geometry: { type: 'Point', coordinates: [78.4867, 17.385] } },
       { id: 'rajasthan', title: 'Rajasthan', geometry: { type: 'Point', coordinates: [75.7873, 26.9124] } },
-      { id: 'kerala', title: 'Kerala (Thiruvananthapuram)', geometry: { type: 'Point', coordinates: [76.9366, 8.5241] } }, // ✅ Added Kerala
+      { id: 'kerala', title: 'Kerala', geometry: { type: 'Point', coordinates: [76.9366, 8.5241] } },
     ];
     citySeries.data.setAll(cities);
  
